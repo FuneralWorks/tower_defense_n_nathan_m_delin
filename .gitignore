@@ -89,4 +89,4 @@ sympy-plots-for-*.tex/
 *.xdy
 
 #python
-*.py
+*.pyc
