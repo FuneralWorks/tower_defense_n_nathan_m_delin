@@ -1,0 +1,31 @@
+type : Game    = struct
+               niveau            : int
+               score             : Score
+               playerName        : string
+
+type : Monster = struct
+               nombre de vie     : int
+               caractère affiché : string
+               gain rapporté     : int
+               vitesse           : float
+               type              : string
+
+type : Tower  = struct
+              type               : string
+              portée             : int
+              dommage            : int
+              amélioration       : boolean
+              caractère affiché  : string
+
+
+type : Score  = struct
+              nombre de vie      : int
+              argent             : int
+              nb de monstres tués: int
+              nb vagues restantes: int
+              niveau actuel      : int
+
+
+type : Map    = struct
+              cases              : liste de liste caractères m*n
+              selected           : tuple (int,int)
