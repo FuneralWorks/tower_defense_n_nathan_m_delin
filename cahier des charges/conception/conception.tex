@@ -1,0 +1,152 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[french,english]{babel}
+\usepackage[scale=0.8]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage{wallpaper}
+\usepackage{alltt}
+
+\title{Conception}
+\author{Maxime Delin et Nathan Calvarin}
+\date{\today}
+
+\begin{document}
+
+    \maketitle
+    \newpage
+    \tableofcontents
+    \newpage
+    
+    \section{Rappel du cahier des charges}
+        \subsection{Contraintes techniques}
+        \begin{itemize}
+        \item Le logiciel est associé à un cours, il doit fonctionner sur les machines de TP de l'ENIB pour que les élèves puissent les tester.
+        \item Le langage utilisé est Python. Le développement devra donc se faire en python.
+        \item Les notions de programmation orientée objet n'ayant pas encore été abordées, le programme devra essentiellement s'appuyer sur le paradigme de la programmation procédurale.
+        \item Le logiciel devra être réalisé en conformité avec les pratiques préconisées en cours de MDD: barrière d'abstraction, modularité, unicode, etc.
+        \item L'interface sera réalisée en mode texte dans un terminal.
+        \end{itemize}
+        \subsection{Fonctionnalités}
+        \begin{itemize}
+        \item F1: Nommer le joueur
+        \item F2: Choisir le niveau
+        \item F3: Jouer une partie
+    
+        \begin{itemize}
+          \item F3.1: Joueur un niveau
+          \begin{itemize}
+          \item F3.1.1 Afficher le jeu
+            \begin{description}
+              \item{-} map
+              \item{-} nom
+              \item{-} niveau
+              \item{-} score
+              \item{-} case sélectionnée
+              \item{-} nombre de monstres restants
+              \item{-} différentes tours disponibles
+              \item{-} argent
+            \end{description}
+          \item F3.1.2 Sélectionner une tour
+          \item F3.1.3 Se déplacer dans la map
+          \item F3.1.4 Placer une tour
+          \item F3.1.5 Améliorer une tour
+          \item F3.1.6 Finir manche
+          \newline
+        \end{itemize}
+        
+          \item F3.2 Finir partie
+            \begin{itemize}
+        \item F3.2.1 Afficher le résultat
+        \item F3.2.2 Quitter
+            \end{itemize}
+            \end{itemize}
+            \end{itemize}
+        \subsection{P1: Prototype P1}
+        Ce prototype porte essentiellement sur la création de la map et sur l'affichage.
+        
+        Mise en oeuvre des fonctionnalités: F1, F2, F3.1.1, F3.1.2, F3.1.3, F3.1.4, F3.1.5
+        
+        Livré dans un archive au format \emph{.zip} ou \emph{.tgz}
+        
+        Contient un manuel d'utilisation dans le fichier \emph{readme.txt}
+        \subsection{P2: Prototype P2}
+        Ce prototype réalise toutes les fonctionnalités.
+        
+        Ajout à P1 des fonctionnalités F3.1.6, F3.2
+        
+        Livré dans un archive au format \emph{.zip} ou \emph{.tgz}
+        
+        Contient un manuel d'utilisation dans le fichier \emph{readme.txt}
+        \newpage
+        
+    \section{Principes des solutions techniques adoptées}
+        \subsection{Langage}
+        Conformément aux contraintes énoncées dans le cahier des charges, le codage est réalisé
+avec langage python. Nous choisissons la version 2.7.5
+
+        \subsection{Architecture du logiciel}
+        Nous mettons en oeuvre le principe de la barrière d'abstraction. Chaque module correspond
+à un type de donnée et fournit toutes les opérations permettant de le manipuler de manière
+abstraite.
+
+        \subsection{Interface utilisateur}
+        L'interface utilisateur se fera via un terminal de type linux.
+Nous reprenons la solution donnée en cours de MDD en utilisant les modules :
+\emph{termios},\emph{sys}, \emph{select}.
+
+            \subsubsection{Boucle de simulation}
+            Le programme mettra en oeuvre une boucle de simulation qui gèrera l'affichage et les
+événements clavier.
+
+            \subsubsection{Affichage}
+            L'affichage se fait en communicant directement avec le terminal en envoyant des chaînes de
+caractères sur la sortie standard de l'application.
+
+            \subsubsection{Gestion du clavier}
+            L'entrée standard est utilisé pour détecter les actions de l'utilisateur.
+Le module \emph{tty} permet de rediriger les événements clavier sur l'entrée standard.
+Pour connaître les actions de l'utilisateur il suffit de lire l'entrée standard.
+
+            \subsubsection{Image ascii-art}
+            Pour dessiner certaines parties de l'interface nous utilisons des « images ascii ».
+Dans l'idée de séparer le code et les données, les différentes images ASCII seront stockées
+dans des fichiers textes : \emph{blalalalal.txt}, \emph{bkkgjmg.txt} .......
+
+        \subsection{Map, tours}
+    \section{Analyse d conception}
+        \subsection{Analyse noms/verbes}
+        \begin{description}
+            \item[Verbes:] \hfill \\
+            nommer,choisir,afficher,déplacer,placer,améliorer,finir,quitter
+            \item[Noms:] \hfill \\
+            jouer,niveau,nom,map,monstre,curseur,tour,argent,case selectionnée,nombre de monstres restant
+           
+            \end{description}
+        \begin{itemize}
+
+        \item[Verbes:]nommer,choisir,afficher,déplacer,placer,améliorer,finir,quitter
+        \item[Noms:]jouer,niveau,nom,map,monstre,curseur,tour,argent,case selectionnée,nombre de monstres restant
+        \end{itemize}
+        \subsection{Type de donnée}
+
+        \subsection{Dépendance entre modules}
+        \subsection{Analayse descendante}
+            \subsubsection{Arbre principal}
+            \begin{alltt}
+            \input{arbre_principal.txt}
+            \end{alltt}
+            \subsubsection{Arbre affichage}
+            \subsubsection{Arbre interaction}
+    \section{Description des fonctions}
+        \subsection{Programme principal: Main.py}
+        \subsection{Game.py}
+        \subsection{Map.py}
+    \section{Calendrier et suivi de développement}
+        \subsection{P1}
+            \subsubsection{Fonctions à développer}
+            \subsubsection{Autre}
+        \subsection{P2}
+            \subsubsection{Fonctions à développer}
+\end{document}

@@ -1,0 +1,29 @@
+
+
+\documentclass{report}
+\usepackage[utf8]{inputenc}
+\usepackage[francais]{babel}
+\usepackage{tikz}
+\usepackage{graphicx}
+\usetikzlibrary{arrows}
+\begin{document}
+
+
+\begin{tikzpicture}[node/.style={fill=green,draw=black,text=black,rounded corners},
+					->,>=latex]
+
+	\node (1) at (0,5) {Lancer le jeu};
+	\node (2) at (1,4) {Saisir nom};
+	\node (3) at (2,3) {Choisir niveau};
+	\node (4) at (3,2) {S1 Jouer manche};
+	\node (5) at (4,1) {Voir le score};
+
+	\draw[->] (1) -- (2);
+	\draw[->] (2) -- (3);
+	\draw[->] (3) -- (4);
+	\draw[->] (4) -- (5);
+\end{tikzpicture}
+
+
+\end{document}
+ 

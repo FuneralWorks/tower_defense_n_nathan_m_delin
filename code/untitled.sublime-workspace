@@ -1,0 +1,474 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"crea",
+				"create"
+			],
+			[
+				"tim",
+				"timeStep"
+			],
+			[
+				"end",
+				"end{tikzpicture}	cDc.tex"
+			],
+			[
+				"var",
+				"varphi	latex-mathsymbols"
+			],
+			[
+				"usepac",
+				"usepackage{package}	latex-document"
+			],
+			[
+				"b",
+				"br	<br>"
+			],
+			[
+				"text",
+				"textbf{text}	latex-document"
+			],
+			[
+				"sub",
+				"subsection{title}	latex-document"
+			],
+			[
+				"subsu",
+				"subsubsection{title}	latex-document"
+			],
+			[
+				"subse",
+				"subsection{title}	latex-document"
+			],
+			[
+				"table",
+				"tableofcontents	latex-document"
+			],
+			[
+				"to",
+				"today	latex-document"
+			],
+			[
+				"date",
+				"datefrench	class-scrlttr2"
+			],
+			[
+				"title",
+				"title{text}	latex-document"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/home/funeralworks/Documents/ENIB/S2/info/projet_mdd/cahier des charges/cDc/cDc.tex",
+			"settings":
+			{
+				"buffer_size": 10468,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "<snippet>\n	<content><![CDATA[\nHello, ${1:this} is a ${2:snippet}.\n]]></content>\n	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->\n	<!-- <tabTrigger>hello</tabTrigger> -->\n	<!-- Optional: Set a scope to limit where the snippet will trigger -->\n	<!-- <scope>source.python</scope> -->\n</snippet>\n",
+			"settings":
+			{
+				"buffer_size": 317,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "Packages/LaTeXing/LaTeX (TikZ).sublime-build",
+	"command_palette":
+	{
+		"height": 192.0,
+		"selected_items":
+		[
+			[
+				"Snippet: ",
+				"Snippet: node"
+			],
+			[
+				"latex",
+				"LaTeXing: Documentation"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"art",
+				"Snippet: New Article"
+			],
+			[
+				"lorem",
+				"Snippet: Lorem ipsum"
+			],
+			[
+				"html",
+				"Snippet: Simple HTML5 Boilerplate"
+			],
+			[
+				"htm",
+				"Snippet: DOCTYPE HTML"
+			],
+			[
+				"ht",
+				"Set Syntax: HTML5"
+			],
+			[
+				"H",
+				"HTML: Encode Special Characters"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"article",
+				"Snippet: New Article"
+			],
+			[
+				"env",
+				"LaTeXing: New Environment"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"arti",
+				"Snippet: New Article"
+			],
+			[
+				"isntall",
+				"Package Control: Install Package"
+			],
+			[
+				"section",
+				"Snippet: Section"
+			],
+			[
+				"sect",
+				"Snippet: Section"
+			],
+			[
+				"beg",
+				"Snippet: \\begin{}…\\end{}"
+			],
+			[
+				"equ",
+				"Snippet: Equation"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: lat",
+				"Package Control: List Packages"
+			],
+			[
+				"latexcom",
+				"LaTeXing: Documentation"
+			],
+			[
+				"men",
+				"View: Toggle Menu"
+			]
+		],
+		"width": 467.0
+	},
+	"console":
+	{
+		"height": 60.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) ",
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			" import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) "
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": true,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": true
+	},
+	"file_history":
+	[
+		"/home/funeralworks/Documents/ENIB/S2/info/projet_mdd/code/background.txt",
+		"/home/funeralworks/Documents/ENIB/S2/info/projet_mdd/code/background.py",
+		"/home/funeralworks/Documents/ENIB/S2/info/projet_mdd/code/monster.py",
+		"/home/funeralworks/Documents/ENIB/S2/info/projet_mdd/code/main.py",
+		"/home/funeralworks/Téléchargements/main(1).py",
+		"/home/funeralworks/Téléchargements/background(1).py",
+		"/home/funeralworks/Téléchargements/animat(1).py",
+		"/home/funeralworks/.config/sublime-text-3/Packages/GoSublime/USAGE.md",
+		"/home/funeralworks/Documents/ENIB/S2/info/jeu/main.py",
+		"/home/funeralworks/Documents/ENIB/S2/info/jeu/background.py",
+		"/home/funeralworks/Documents/ENIB/S2/info/projet_mdd/python/background.txt",
+		"/home/funeralworks/Documents/ENIB/S2/info/projet_mdd/cahier des charges/conception/conception.tex",
+		"/home/funeralworks/.config/sublime-text-3/Packages/User/node.sublime-snippet",
+		"/home/funeralworks/Documents/ENIB/S2/info/projet_mdd/cahier des charges/cDc.tex",
+		"/home/funeralworks/Documents/ENIB/S2/info/projet_mdd/cahier des charges/S0.tex",
+		"/home/funeralworks/Documents/ENIB/S2/info/projet_mdd/cahier des charges/untitled.tex",
+		"/home/funeralworks/Téléchargements/towerDefense_delinCalvarin-CdC.tex",
+		"/home/funeralworks/Téléchargements/ENIB-cartouche-cmjn.jpg",
+		"/home/funeralworks/.config/sublime-text-3/Packages/User/LaTeXTools.sublime-settings",
+		"/opt/lampp/htdocs/tests/test.html",
+		"/opt/lampp/htdocs/tests/test.php",
+		"/home/funeralworks/Documents/ENIB/S2/info/jeu/animat.py",
+		"/home/funeralworks/Documents/ENIB/S2/info/jeu/image.txt",
+		"/home/funeralworks/Documents/ENIB/S2/info/projet_mdd/cahier des charges.tex/cDc.tex",
+		"/home/funeralworks/Documents/ENIB/S2/info/fond.txt",
+		"/home/funeralworks/Documents/ENIB/S2/info/projet_mdd.py",
+		"/home/funeralworks/Documents/projet/nouveau/ExempleCours_4_Abstraction/pasdemodule.py",
+		"/home/funeralworks/Documents/projet/nouveau/ExempleCours_4_Abstraction/main.py",
+		"/home/funeralworks/Documents/projet/nouveau/ExempleCours_4_Abstraction/cityInfo.py",
+		"/home/funeralworks/Documents/projet/nouveau/ExempleCours_4_Abstraction/cities.py",
+		"/home/funeralworks/Téléchargements/animat.py",
+		"/home/funeralworks/Téléchargements/background.py",
+		"/home/funeralworks/Téléchargements/image.txt",
+		"/home/funeralworks/Téléchargements/main.py",
+		"/home/funeralworks/Documents/projet/curriculum.tex",
+		"/home/funeralworks/Documents/projet/octave/test.matlab",
+		"/home/funeralworks/.config/sublime-text-3/Packages/User/Distraction Free.sublime-settings",
+		"/home/funeralworks/.config/sublime-text-3/Packages/GoSublime/CHANGELOG.md",
+		"/home/funeralworks/Téléchargements/template_fr.tex",
+		"/home/funeralworks/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+		"/home/funeralworks/.config/sublime-text-3/Packages/Default/Default (Linux).sublime-keymap",
+		"/home/funeralworks/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
+		"/home/funeralworks/.config/sublime-text-3/Packages/User/LaTeX.sublime-settings",
+		"/home/funeralworks/.config/sublime-text-3/Packages/LaTeXTools/Default (Linux).sublime-keymap",
+		"/home/funeralworks/Documents/ENIB/S2/optique/diapo/diapo.tex",
+		"/home/funeralworks/Documents/ENIB/S2/optique/compte_rendu/compte_rendu_tp_1.tex",
+		"/home/funeralworks/.config/sublime-text-3/Packages/User/LaTeXing.sublime-settings",
+		"/home/funeralworks/.config/sublime-text-3/Packages/LaTeXTools/README.markdown",
+		"/home/funeralworks/.config/sublime-text-3/Packages/LaTeXing/LaTeXing.sublime-settings",
+		"/home/funeralworks/Documents/projet/curriculum.pdf",
+		"/home/funeralworks/Documents/Latex/cours_vincent/cours_math_vincent.tex"
+	],
+	"find":
+	{
+		"height": 27.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"x",
+			"cm",
+			"o",
+			"g",
+			"p",
+			"f",
+			"Gagner",
+			"map",
+			"second",
+			"premier",
+			"second",
+			"premier",
+			"second",
+			"premier",
+			"espace",
+			"espce",
+			"p",
+			"g",
+			"f",
+			"espace",
+			"Perdu",
+			"Gagné",
+			"map",
+			"Tower Defense",
+			"Tower",
+			"itemize",
+			"hey",
+			"cvitemwithcomment",
+			"Musique",
+			"}\n"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/home/funeralworks/Documents/ENIB/S2/info/projet_mdd/cahier des charges/cDc/cDc.tex",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 10468,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								776,
+								776
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LaTeXing/support/LaTeX.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 324.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 317,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								293,
+								293
+							]
+						],
+						"settings":
+						{
+							"default_dir": "/home/funeralworks/.config/sublime-text-3/Packages/User",
+							"default_extension": "sublime-snippet",
+							"syntax": "Packages/XML/XML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.GoSublime-output":
+	{
+		"height": 142.0
+	},
+	"output.MarGo-output":
+	{
+		"height": 142.0
+	},
+	"output.exec":
+	{
+		"height": 295.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "untitled.sublime-project",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 108.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
