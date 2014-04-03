@@ -1,6 +1,6 @@
-Main.show()0
- +--Game.show()0
-     +--Map.show()0
-     +--Monster.show()0
+Main.show()
+ +--Game.show()
+     +--Map.show()
+     +--Monster.show()
      +--Tower.show()
-     +--Score.show()0
+     +--Score.show()

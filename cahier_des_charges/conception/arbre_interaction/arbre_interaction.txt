@@ -1,18 +1,18 @@
-Main.interact()0
- +--Game.move()0
- |   +--Map.getselected()0
- |   +--Map.setselected()0
- |   +--Monster.move()0
+Main.interact()
+ +--Game.move()
+ |   +--Map.getselected()
+ |   +--Map.setselected()
+ |   +--Monster.move()
  |
  +--Game.play()
- |   +--Map.play()0
+ |   +--Map.play()
  |   +--Tower.play()
  |
- +--Monster.play()0
- |   +--Monster.damage()0
- |   +--Monster.spawn()0
- |   +--Monster.die()0
- |   +--Monster.effect()0
+ +--Monster.play()
+ |   +--Monster.damage()
+ |   +--Monster.spawn()
+ |   +--Monster.die()
+ |   +--Monster.effect()
  |
- +--Main.finish()0
+ +--Main.finish()
  
