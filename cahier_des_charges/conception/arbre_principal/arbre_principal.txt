@@ -1,4 +1,15 @@
-Main.main()
-    |
-    |
- 
+Main.main()0
+ +--Main.init()0
+ |   +--Main.askName()0
+ |   +--Main.askLevel()0
+ |   +--Game.create()0
+ |       +--Level.create()0
+ |           +--Map.create()0
+ |           +--Score.create()0
+ |
+ +--Main.run()0
+     +--Main.interact()0
+     +--Main.move()0
+     +--Main.anim()0
+     +--Main.show()0
+     +--Main.timesleep()0
