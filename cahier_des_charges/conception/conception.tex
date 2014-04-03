@@ -1,4 +1,4 @@
-\documentclass{article}
+\documentclass[a4paper]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[french,english]{babel}
 \usepackage[scale=0.8]{geometry}
@@ -7,15 +7,42 @@
 \usepackage{graphicx}
 \usepackage{wallpaper}
 \usepackage{alltt}
-
+\usepackage{enumitem}
+\usepackage{vruler}
+\usepackage{color}
 \title{Conception}
 \author{Maxime Delin et Nathan Calvarin}
 \date{\today}
-
+\frenchbsetup{StandardLists=true}
+\usepackage{eso-pic}
+    \newcommand\BackgroundIm{
+    \put(0,0){
+    \parbox[b][\paperheight]{\paperwidth}{
+    \vfill
+    \centering
+    \includegraphics[height=\paperheight,width=\paperwidth,
+    keepaspectratio]{/home/funeralworks/Documents/ENIB/S2/ressources/2012-2013-fond-orange-rose-couverture-A4-medium.jpg}
+    \vfill
+    }}}
 \begin{document}
+\begin{titlepage}
+    \newcommand{\HRule}{\rule{\linewidth}{0.5mm}} %défini une règle d'une n largeur
+    \center %centre tout sur la page
+    \AddToShipoutPicture*{\BackgroundIm} %ajoute une image en fond de première page ('*' indique qu'il faut seulement le faire sur cette page)
+    \textsc{\LARGE École Nationale des Ingénieurs de Brest}\\[1.5cm]
+    \textsc{\Large Document de Conception}\\[0.5cm]
+    \textsc{\large MDD-PROJET}\\[0.5cm]
+    \HRule \\[0.4cm] %ligne horizontale
+    {\Huge \bfseries Tower Defense}\\[0.4cm] % titre du document
+    \HRule \\[0.4cm] %ligne horizontale
+    \Large
+    Nathan \textsc{Calvarin} et Maxime \textsc{Delin}\\[5cm]
+    \vfill
+\end{titlepage}
 
-    \maketitle
-    \newpage
+\selectlanguage{french}
+\URCornerWallPaper{.25}{/home/funeralworks/Documents/ENIB/S2/ressources/ENIB-cartouche-cmjn.jpg}
+    
     \tableofcontents
     \newpage
     
@@ -26,13 +53,14 @@
         \item Le langage utilisé est Python. Le développement devra donc se faire en python.
         \item Les notions de programmation orientée objet n'ayant pas encore été abordées, le programme devra essentiellement s'appuyer sur le paradigme de la programmation procédurale.
         \item Le logiciel devra être réalisé en conformité avec les pratiques préconisées en cours de MDD: barrière d'abstraction, modularité, unicode, etc.
-        \item L'interface sera réalisée en mode texte dans un terminal.
+        \item L'interface sera réalisée en mode texte dans un terminal. 
         \end{itemize}
         \subsection{Fonctionnalités}
         \begin{itemize}
         \item F1: Nommer le joueur
         \item F2: Choisir le niveau
         \item F3: Jouer une partie
+        
     
         \begin{itemize}
           \item F3.1: Joueur un niveau
@@ -84,65 +112,126 @@
     \section{Principes des solutions techniques adoptées}
         \subsection{Langage}
         Conformément aux contraintes énoncées dans le cahier des charges, le codage est réalisé
-avec langage python. Nous choisissons la version 2.7.5
+        avec langage python. Nous choisissons la version 2.7.5
 
         \subsection{Architecture du logiciel}
         Nous mettons en oeuvre le principe de la barrière d'abstraction. Chaque module correspond
-à un type de donnée et fournit toutes les opérations permettant de le manipuler de manière
-abstraite.
+        à un type de donnée et fournit toutes les opérations permettant de le manipuler de manière
+        abstraite.
 
         \subsection{Interface utilisateur}
-        L'interface utilisateur se fera via un terminal de type linux.
-Nous reprenons la solution donnée en cours de MDD en utilisant les modules :
-\emph{termios},\emph{sys}, \emph{select}.
+        L'interface utilisateur se fera via un terminal de type linux. Nous reprenons la solution donnée en cours de MDD en utilisant les modules :\emph{termios},\emph{sys}, \emph{select}.
 
             \subsubsection{Boucle de simulation}
             Le programme mettra en oeuvre une boucle de simulation qui gèrera l'affichage et les
-événements clavier.
+            événements clavier.
 
             \subsubsection{Affichage}
             L'affichage se fait en communicant directement avec le terminal en envoyant des chaînes de
-caractères sur la sortie standard de l'application.
+            caractères sur la sortie standard de l'application.
 
             \subsubsection{Gestion du clavier}
             L'entrée standard est utilisé pour détecter les actions de l'utilisateur.
-Le module \emph{tty} permet de rediriger les événements clavier sur l'entrée standard.
-Pour connaître les actions de l'utilisateur il suffit de lire l'entrée standard.
+            Le module \emph{tty} permet de rediriger les événements clavier sur l'entrée standard.
+            Pour connaître les actions de l'utilisateur il suffit de lire l'entrée standard.
 
             \subsubsection{Image ascii-art}
             Pour dessiner certaines parties de l'interface nous utilisons des « images ascii ».
-Dans l'idée de séparer le code et les données, les différentes images ASCII seront stockées
-dans des fichiers textes : \emph{blalalalal.txt}, \emph{bkkgjmg.txt} .......
+            Dans l'idée de séparer le code et les données, les différentes images ASCII seront stockées dans des fichiers textes : \emph{blalalalal.txt}, \emph{bkkgjmg.txt} .......
 
-        \subsection{Map, tours}
-    \section{Analyse d conception}
+        \subsection{Map, cases et tours\ldots}
+        Pour modéliser la \emph{map} , une liste de liste (m*n) permet de stocker des caractères correspondant au tour posées sur la \emph{map}.
+        Cette liste de liste sera crée à partir d'un fichier .txt en utilisant les fonction split().
+    
+    \section{Analyse}
         \subsection{Analyse noms/verbes}
-        \begin{description}
-            \item[Verbes:] \hfill \\
-            nommer,choisir,afficher,déplacer,placer,améliorer,finir,quitter
-            \item[Noms:] \hfill \\
-            jouer,niveau,nom,map,monstre,curseur,tour,argent,case selectionnée,nombre de monstres restant
-           
-            \end{description}
-        \begin{itemize}
-
-        \item[Verbes:]nommer,choisir,afficher,déplacer,placer,améliorer,finir,quitter
-        \item[Noms:]jouer,niveau,nom,map,monstre,curseur,tour,argent,case selectionnée,nombre de monstres restant
-        \end{itemize}
+            \begin{description}
+                \item[Verbes:] \hfill \\
+                    nommer,choisir,afficher,déplacer,placer,améliorer,finir,quitter
+                \item[Noms:] \hfill \\
+                    jouer,niveau,nom,map,monstre,curseur,tour,argent,case selectionnée,nombre de monstres restant
+           \end{description}
         \subsection{Type de donnée}
-
+            \begin{alltt}
+            \input{/home/funeralworks/Documents/ENIB/S2/info/tower_defense_n_nathan_m_delin/cahier_des_charges/conception/type_de_donnees/type_de_donnees.txt}
+            \end{alltt}
         \subsection{Dépendance entre modules}
         \subsection{Analayse descendante}
             \subsubsection{Arbre principal}
             \begin{alltt}
-            \input{arbre_principal.txt}
+            \input{/home/funeralworks/Documents/ENIB/S2/info/tower_defense_n_nathan_m_delin/cahier_des_charges/conception/arbre_principal/arbre_principal.txt}
             \end{alltt}
             \subsubsection{Arbre affichage}
+            \begin{alltt}
+            \input{/home/funeralworks/Documents/ENIB/S2/info/tower_defense_n_nathan_m_delin/cahier_des_charges/conception/arbre_affichage/arbre_affichage.txt}
+            \end{alltt}
             \subsubsection{Arbre interaction}
+            \begin{alltt}
+            \input{/home/funeralworks/Documents/ENIB/S2/info/tower_defense_n_nathan_m_delin/cahier_des_charges/conception/arbre_interaction/arbre_interaction.txt}
+            \end{alltt}
     \section{Description des fonctions}
         \subsection{Programme principal: Main.py}
-        \subsection{Game.py}
+            \begin{itemize}
+                \item Main.\textbf{main()}
+                \item Main.\textbf{init()}
+                \item Main.\textbf{run()}
+                \item Main.\textbf{show()}
+                \item Main.\textbf{interact()}
+                \item Main.\textbf{move()}
+                \item Main.\textbf{timesleep()}
+                \item Main.\textbf{anim()}
+                \item Main.\textbf{askName()}
+                \item Main.\textbf{askLevel()}
+                \item Main.\textbf{finish()}
+            \end{itemize}
+
+        \subsection{Game.p y}
+            \begin{itemize}
+               \item Game.\textbf{create()}
+               \item Game.\textbf{move()}
+               \item game.\textbf{show()}
+
+
+            \end{itemize}
+
         \subsection{Map.py}
+            \begin{itemize}
+                \item Map.\textbf{create()}
+                \item Map.\textbf{getselected()}
+                \item Map.\textbf{setselected()}
+                \item Map.\textbf{play()}
+                \item Map.\textbf{show()}
+            \end{itemize}
+
+        \subsection{Level.py}
+            \begin{itemize}
+                \item Level.\textbf{create()}
+            \end{itemize}
+
+        \subsection{Monster.py}
+            \begin{itemize}
+                \item Monster.\textbf{move()}
+                \item Monster.\textbf{play()}
+                \item Monster.\textbf{damage()}
+                \item Monster.\textbf{spawn()}
+                \item Monster.\textbf{die()}
+                \item Monster.\textbf{effect()}
+
+            \end{itemize}
+
+        \subsection{Score.py}
+            \begin{itemize}
+                \item Score.\textbf{create()}
+                \item Score.\textbf{show()}
+            \end{itemize}
+
+        \subsection{Tower.py}
+            \begin{itemize}
+                \item Tower.\textbf{play()}
+                \item Tower.\textbf{show()}
+                \item Tower.\textbf{play()}
+            \end{itemize}
+
     \section{Calendrier et suivi de développement}
         \subsection{P1}
             \subsubsection{Fonctions à développer}

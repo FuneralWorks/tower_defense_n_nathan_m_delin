@@ -29,3 +29,4 @@ type : Score  = struct
 type : Map    = struct
               cases              : liste de liste caractères m*n
               selected           : tuple (int,int)
+
