@@ -1,0 +1,20 @@
+
+Game.\textbf{create()}
+Game.\textbf{move()}
+Game.\textbf{show()}
+
+Game\textbf{create()}->Game
+		Description : crée une nouvelle partie
+		Paramètres : 
+			g : Game
+			name : chaîne
+		Valeur de retour : nouvelle partie
+Game\textbf{move()}->return
+		Description : decription
+		Paramètres : param
+		Valeur de retour : return
+Game\textbf{show()}->rien
+		Description : affiche le visuel de la partie en cours
+		Paramètres : g : Game
+		Valeur de retour : aucune
+
