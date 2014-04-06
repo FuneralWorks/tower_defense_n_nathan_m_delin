@@ -1,0 +1,14 @@
+
+Score.\textbf{create()}
+Score.\textbf{show()}
+
+Score.\textbf{create()}->argent, nb de vagues restantes, nb vies restantes
+        Description : crée un score qui indique la quantité d'argent et de monstres restant
+                      ainsi que le nombre de vie
+        Paramètres : ?
+        Valeur de retour : ?
+        
+Score.\textbf{show()}->return
+        Description : affiche le score
+        Paramètres : aucun
+        Valeur de retour : aucune

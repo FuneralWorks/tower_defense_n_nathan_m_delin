@@ -9,10 +9,12 @@ Game.\textbf{create()}->Game
         	g : Game
         	name : chaîne
         Valeur de retour : nouvelle partie
+
 Game.\textbf{move()}->return
         Description : decription
         Paramètres : param
         Valeur de retour : return
+        
 Game.\textbf{show()}->rien
         Description : affiche le visuel de la partie en cours
         Paramètres : g : Game

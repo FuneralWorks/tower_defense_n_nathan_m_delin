@@ -28,6 +28,7 @@ Map.\textbf{play(g,p)}->int
                      tower : caractère
         Valeur de retour : 1 si la case est vide, 0 si la case est occupée ou
         2 si la case est occupée par une tour qu'il est possible d'améliorer
+        
 Map.\textbf{show(m)}->rien
         Description : affiche la \emph{map}
         Paramètres : m: map

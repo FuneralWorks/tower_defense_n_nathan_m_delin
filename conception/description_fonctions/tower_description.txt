@@ -1,0 +1,14 @@
+
+Tower.\textbf{play()}
+Tower.\textbf{show()}
+Tower.\textbf{play()}
+
+Tower.\textbf{play()}->?
+       Description : ?
+       Paramètres : ?
+       Valeur de retour : ?
+       
+Tower.\textbf{show()}->rien
+       Description : affiche les tours
+       Paramètres : aucun
+       Valeur de retour : aucune

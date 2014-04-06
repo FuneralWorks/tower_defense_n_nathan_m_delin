@@ -20,30 +20,37 @@ Main\textbf{init()}->return
         Description : initialisation du jeu
         Paramètres : aucun
         Valeur de retour : aucune
+        
 Main.\textbf{run()}->rien
         Description : boucle de simulation
         Paramètres : aucun
         Valeur de retour : aucune
+        
 Main.\textbf{show()}->rien
         Description : affiche le jeu dans le terminal
         Paramètres : aucun
         Valeur de retour : aucune
+        
 Main.\textbf{interact()}->rien
         Description : gère les événements clavier
         Paramètres : aucun
         Valeur de retour : aucune
+        
 Main.\textbf{anim()}->rien
         Description : animation des tirs des tours
         Paramètres : aucun
         Valeur de retour : aucune
+        
 Main.\textbf{askName()}->chaîne
         Description : demande le nom de l'utilisateur
         Paramètres : aucun
         Valeur de retour : le nom du joueur
+        
 Main.\textbf{askLevel()}->entier
         Description : demande à l'utilisateur le niveau auquel il souhaite jouer
         Paramètres : aucun
         Valeur de retour : niveau selectionné
+        
 Main.\textbf{finish()}->rien
         Description : termine ma partie, affiche la fin du niveau avec le score du joueur
         Paramètres : aucun
