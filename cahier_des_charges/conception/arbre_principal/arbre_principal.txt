@@ -7,7 +7,7 @@ Main.main()
  |           +--Map.create()
  |           +--Score.create()
  |
- +--Main.run()0
+ +--Main.run()
      +--Main.interact()
      +--Main.move()
      +--Main.anim()

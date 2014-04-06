@@ -1,3 +1,4 @@
+
 type : Game    = struct
                niveau            : int
                score             : Score
