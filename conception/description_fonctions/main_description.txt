@@ -52,6 +52,6 @@ Main.\textbf{askLevel()}->entier
         Valeur de retour : niveau selectionné
         
 Main.\textbf{finish()}->rien
-        Description : termine ma partie, affiche la fin du niveau avec le score du joueur
+        Description : termine ma partie, affiche la fin du niveau avec le score du joueur et sauvegarde le score du joueur
         Paramètres : aucun
         Valeur de retour : aucune

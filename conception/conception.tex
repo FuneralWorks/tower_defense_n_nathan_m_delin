@@ -11,6 +11,7 @@
 \usepackage{vruler}
 \usepackage{color}
 \usepackage{tabularx}
+\usetikzlibrary{arrows,shapes,positioning,shadows,trees,automata}
 \title{Conception}
 \author{Maxime Delin et Nathan Calvarin}
 \date{\today}
@@ -25,6 +26,29 @@
     keepaspectratio]{/home/funeralworks/Documents/ENIB/S2/info/tower_defense_n_nathan_m_delin/ressources/2012-2013-fond-orange-rose-couverture-A4-medium.jpg}
     \vfill
     }}}
+\tikzset{
+    system/.style={
+            ellipse,
+            draw=black, very thick,
+            fill=green!30,
+            minimum height=3em,
+            inner sep=2mm,
+            text centered,
+            drop shadow
+            },
+    our/.style={
+            ellipse,
+            minimum height=1.2cm,
+            draw=black,very thick,
+            fill=pink!100,
+            text centered,
+            drop shadow
+            },
+    ar/.style={
+            ->,
+            thick
+    }
+    }
 \begin{document}
 
 \begin{titlepage}
@@ -158,6 +182,32 @@
             \input{/home/funeralworks/Documents/ENIB/S2/info/tower_defense_n_nathan_m_delin/conception/type_de_donnees/type_de_donnees.txt}
             \end{alltt}
         \subsection{Dépendance entre modules}
+        \begin{tikzpicture}
+            
+                \node[our] (main)           {Main.py};
+                \node[our] (game)          [below=of main] {Game.py};
+                \node[our] (level)         [below=of game] {Level.py};
+                \node[our] (map)           [right=of level] {Map.py};
+                \node[our] (score)         [left=of level] {Score.py};
+                \node[our] (monster)       [right=of game] {Monster.py};
+                \node[our] (tower)         [above=of monster,yshift=-.5 cm] {Tower.py};
+
+                \draw [ar] (main) to                (game);
+                \draw[ar]  (game) to                (monster);
+                \draw[ar]  (game) to               [bend right=-15] (tower);
+                \draw[ar]  (game) to                (level);
+                \draw[ar]  (game) to               [bend left=-30] (score);
+                \draw[ar]  (game) to              [bend right=-15]  (map);
+                \draw[ar]  (level) to                (map);
+                \draw[ar]  (level) to                (score);
+
+
+        \end{tikzpicture}
+
+
+
+
+
         \subsection{Analayse descendante}
             \subsubsection{Arbre principal}
             \begin{alltt}
@@ -212,87 +262,87 @@
         \subsection{P1}
             \subsubsection{Fonctions à développer}
             \begin{tabular}{|l|c|c|c|}
-      \hline
-      fonctions & codées & testées & commentaires \\
-      \hline
-      Main.\textbf{main()} & & & \\
-      \hline
-      Main.\textbf{init()} & & & \\
-      \hline
-      Main.\textbf{run()}  & & & \\
-      \hline
-      Main.\textbf{show()} & & & \\
-      \hline
-      Main.\textbf{interact()} & & & \\
-      \hline
-      Main.\textbf{move()} & & & \\
-      \hline
-      Main.\textbf{timesleep()} & & & \\
-      \hline
-      Main.\textbf{anim()} & & & \\
-      \hline 
-      Main.\textbf{askName()} & & & \\
-      \hline
-      Main.\textbf{askLevel()} & & & \\
-      \hline
-      \hline
-      Game.\textbf{create()} & & & \\
-      \hline
-      Game.\textbf{move()} & & & \\
-      \hline
-      Game.\textbf{show()} & & & \\
-      \hline 
-      \hline
-      Map.\textbf{create()} & & & \\
-      \hline
-      Map.\textbf{getSelected()} & & & \\
-      \hline
-      Map.\textbf{setSelected()} & & & \\
-      \hline
-      Map.\textbf{play()} & & & \\
-      \hline
-      Map.\textbf{show()} & & & \\
-      \hline
-      \hline
-      Level.\textbf{create()} & & & \\
-      \hline
-      \hline
-      Monster.\textbf{move()} & & & \\
-      \hline
-      Monster.\textbf{play()} & & & \\
-      \hline
-      Monster.\textbf{damage()} & & & \\
-      \hline 
-      Monster.\textbf{spawn()} & & & \\
-      \hline
-      Monster.\textbf{die()} & & & \\
-      \hline
-      \hline
-      Score.\textbf{create()} & & & \\
-      \hline
-      Score.\textbf{show()} & & & \\
-      \hline
-      \hline
-      Tower.\textbf{show()} & & & \\
-      \hline
+                \hline
+                fonctions & codées & testées & commentaires \\
+                \hline
+                Main.\textbf{main()} & & & \\
+                \hline
+                Main.\textbf{init()} & & & \\
+                \hline
+                Main.\textbf{run()}  & & & \\
+                \hline
+                Main.\textbf{show()} & & & \\
+                \hline
+                Main.\textbf{interact()} & & & \\
+                \hline
+                Main.\textbf{move()} & & & \\
+                \hline
+                Main.\textbf{timesleep()} & & & \\
+                \hline
+                Main.\textbf{anim()} & & & \\
+                \hline 
+                Main.\textbf{askName()} & & & \\
+                \hline
+                Main.\textbf{askLevel()} & & & \\
+                \hline
+                \hline
+                Game.\textbf{create()} & & & \\
+                \hline
+                Game.\textbf{move()} & & & \\
+                \hline
+                Game.\textbf{show()} & & & \\
+                \hline 
+                \hline
+                Map.\textbf{create()} & & & \\
+                \hline
+                Map.\textbf{getSelected()} & & & \\
+                \hline
+                Map.\textbf{setSelected()} & & & \\
+                \hline
+                Map.\textbf{play()} & & & \\
+                \hline
+                Map.\textbf{show()} & & & \\
+                \hline
+                \hline
+                Level.\textbf{create()} & & & \\
+                \hline
+                \hline
+                Monster.\textbf{move()} & & & \\
+                \hline
+                Monster.\textbf{play()} & & & \\
+                \hline
+                Monster.\textbf{damage()} & & & \\
+                \hline 
+                Monster.\textbf{spawn()} & & & \\
+                \hline
+                Monster.\textbf{die()} & & & \\
+                \hline
+                \hline
+                Score.\textbf{create()} & & & \\
+                \hline
+                Score.\textbf{show()} & & & \\
+                \hline
+                \hline
+                Tower.\textbf{show()} & & & \\
+                \hline
       
-        \end{tabular}  
+            \end{tabular}  
       
             \subsubsection{Autre}
         \subsection{P2}
             \subsubsection{Fonctions à développer}
             \begin{tabular}{|l|c|c|c|}
-        \hline
-        fonctions & codées & testées & commentaires \\
-        \hline
-        Main.\textbf{finish()} & & & \\
-        \hline
-        \hline
-        Monster.\textbf{effect()} & & & \\
-        \hline
-        \hline
-        Tower.\textbf{play()} & & & \\
-        \hline 
-        \end{tabular}
+                \hline
+                fonctions & codées & testées & commentaires \\
+                \hline
+                Main.\textbf{finish()} & & & \\
+                \hline
+                \hline
+                Monster.\textbf{effect()} & & & \\
+                \hline
+                \hline
+                Tower.\textbf{play()} & & & \\
+                \hline 
+            \end{tabular}
 
 \end{document}
