@@ -6,10 +6,10 @@ Monster.\textbf{spawn()}
 Monster.\textbf{die()}
 Monster.\textbf{effect()}
 
-Monster.\textbf{move()}->?
-         Description : déplace les monstres le d'un chemin prédéfini dans le fichier \emph{.txt}
-         Paramètres : ?
-         Valeur de retour : ?
+Monster.\textbf{move()}-> string
+         Description : déplace les monstres le long d'un chemin prédéfini dans le fichier \emph{.xml}
+         Paramètres : \emph{fichier.xml}
+         Valeur de retour : direction
          
 Monster.\textbf{play()}->?
          Description : ?
@@ -18,7 +18,7 @@ Monster.\textbf{play()}->?
          
 Monster.\textbf{damage()}->dommage subit
          Description : calcule le nombre de dommages subit par le monstre
-         Paramètres : tour qui l'a touché
+         Paramètres : tour qui l'a touchée
          Valeur de retour : int : dommage subit
          
 Monster.\textbf{spawn()}-> tuple(int,int)
@@ -28,7 +28,7 @@ Monster.\textbf{spawn()}-> tuple(int,int)
          
 Monster.\textbf{die()}->booléen
          Description : calcule en fonction du nombre de vies du monstres et les dommages subit 
-                       si le monstre est toujours vivant ou nom. Renvoie 0 vivant, renvoie 2 mort.
+                       si le monstre est toujours vivant ou nom. Renvoie 0 vivant, renvoie 1 mort.
          Paramètres : nb vie du monstre
          Valeur de retour : mort ou vivant
          

@@ -5,7 +5,7 @@
         Main.\textbf{show()}
         Main.\textbf{interact()}
         Main.\textbf{move()}
-        %Main.\textbf{timesleep()}
+        Main.\textbf{timesleep()}
         Main.\textbf{anim()}
         Main.\textbf{askName()}
         Main.\textbf{askLevel()}

@@ -146,7 +146,7 @@
         abstraite.
 
         \subsection{Interface utilisateur}
-        L'interface utilisateur se fera via un terminal de type linux. Nous reprenons la solution donnée en cours de MDD en utilisant les modules :\emph{termios},\emph{sys}, \emph{select}.
+        L'interface utilisateur se fera via un terminal de type linux. Nous reprenons la solution donnée en cours de MDD en utilisant les modules :\emph{termios}, \emph{sys}, \emph{select}.
 
             \subsubsection{Boucle de simulation}
             Le programme mettra en oeuvre une boucle de simulation qui gèrera l'affichage et les
@@ -163,19 +163,19 @@
 
             \subsubsection{Image ascii-art}
             Pour dessiner certaines parties de l'interface nous utilisons des « images ascii ».
-            Dans l'idée de séparer le code et les données, les différentes images ASCII seront stockées dans des fichiers textes : \emph{blalalalal.txt}, \emph{bkkgjmg.txt} .......
+            Dans l'idée de séparer le code et les données, les différentes images ASCII seront stockées dans des fichiers XML : \emph{level1.xml}, \emph{level2.xml} et du module python \emph{Minidom}.
 
         \subsection{Map, cases et tours\ldots}
         Pour modéliser la \emph{map} , une liste de liste (m*n) permet de stocker des caractères correspondant aux tours posées sur la \emph{map} ou à une case vide.
-        Cette liste de liste sera crée à partir d'un fichier .txt en utilisant les fonction split().
+        Cette liste de liste sera crée à partir d'un fichier .\emph{xml} en utilisant les fonction \emph{split()}.
     
     \section{Analyse}
         \subsection{Analyse noms/verbes}
             \begin{description}
                 \item[Verbes:] \hfill \\
-                    nommer,choisir,afficher,déplacer,placer,améliorer,finir,quitter
+                    nommer, choisir, afficher, déplacer, placer, améliorer, finir, quitter
                 \item[Noms:] \hfill \\
-                    jouer,niveau,nom,map,monstre,curseur,tour,argent,case selectionnée,nombre de monstres restant
+                    jouer, niveau, nom, map, monstre, curseur, tour, argent, case selectionnée, nombre de monstres restant
            \end{description}
         \subsection{Type de donnée}
             \begin{alltt}
@@ -191,15 +191,27 @@
                 \node[our] (score)         [left=of level] {Score.py};
                 \node[our] (monster)       [right=of game] {Monster.py};
                 \node[our] (tower)         [above=of monster,yshift=-.5 cm] {Tower.py};
+                \node[system] (tty)         [left=of main]{tty.py};
+                \node[system] (select)         [below=of tty,yshift=1cm]{select.py};
+                \node[system] (termios)         [below=of select,yshift=1cm]{termios.py};
+                \node[system] (sys)         [above=of tty,yshift=-1cm]{sys.py};
+
 
                 \draw [ar] (main) to                (game);
                 \draw[ar]  (game) to                (monster);
-                \draw[ar]  (game) to               [bend right=-15] (tower);
+                \draw[ar]  (game) to                [bend right=-15] (tower);
                 \draw[ar]  (game) to                (level);
-                \draw[ar]  (game) to               [bend left=-30] (score);
-                \draw[ar]  (game) to              [bend right=-15]  (map);
-                \draw[ar]  (level) to                (map);
-                \draw[ar]  (level) to                (score);
+                \draw[ar]  (game) to                [bend left=-30] (score);
+                \draw[ar]  (game) to                [bend right=-15]  (map);
+                \draw[ar]  (level) to               (map);
+                \draw[ar]  (level) to               (score);
+                \draw[ar]  (main) to                [bend left=-5] (tty);
+                \draw[ar]  (main) to                [bend left=15](select);
+                \draw[ar]   (main) to               [bend left=25](termios);
+                \draw[ar]   (main) to               [bend left=-25] (sys);
+
+
+
 
 
         \end{tikzpicture}
@@ -259,7 +271,7 @@
             \end{alltt}
 
     \section{Calendrier et suivi de développement}
-        \subsection{P1}
+        \subsection{P1 : 14 Mai}
             \subsubsection{Fonctions à développer}
             \begin{tabular}{|l|c|c|c|}
                 \hline
@@ -329,7 +341,8 @@
             \end{tabular}  
       
             \subsubsection{Autre}
-        \subsection{P2}
+            Possibilité d'enregistrer son score dans un fichier \emph{.xml}, 
+        \subsection{P2 : 28 Mai}
             \subsubsection{Fonctions à développer}
             \begin{tabular}{|l|c|c|c|}
                 \hline
