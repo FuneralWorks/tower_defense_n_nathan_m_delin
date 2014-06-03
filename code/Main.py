@@ -28,8 +28,7 @@ def init():
     # creation des elements du jeu
     background = Background.create("image.txt")
     player = Player.create(4, 1, 10, [(0, 0)], 200)
-    level = Level.create(5, [], background)
-    logging.info(level)
+    level = Level.create(6, [], background, 5)
     refTime = int(time.time())
     game = Game.create(background, player, level, win, refTime)
     return game
@@ -41,25 +40,20 @@ def show(game):
     Game.show(game)
 
 
-def interact(game):
+def interact(game, numMonster):
 
-    Game.interact(game)
-
-
-def move(game):
-
-    Game.move(game)
+    return Game.interact(game, numMonster)
 
 
 def run(game):
-
+    numMonster = 0
     # Boucle de simulation
     while 1:
 
-        interact(game)
-        move(game)
+        numMonster = interact(game, numMonster)
+        #logging.info("numMonster Interact "+str(numMonster))
+        #move(game)
         show(game)
-
 
 game = init()
 run(game)

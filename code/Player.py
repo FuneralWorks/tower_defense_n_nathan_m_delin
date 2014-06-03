@@ -22,3 +22,5 @@ def showLife(player, win):
 
 def showMoney(player, win):
     win.addstr(6, 40, " Argent : " + str(player['money']) + " ")
+
+
