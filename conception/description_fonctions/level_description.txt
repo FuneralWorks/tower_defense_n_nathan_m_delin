@@ -1,7 +1,0 @@
-
-Level.\textbf{create()}
-
-Level.\textbf{create()}->return
-		Description : crée un niveau
-		Paramètres : param
-		Valeur de retour : return

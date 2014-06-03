@@ -1,13 +1,16 @@
-
 Game.\textbf{create()}
 Game.\textbf{move()}
 Game.\textbf{show()}
+Game.\textbf{interact()}
+Game.\textbf{showCursor()}
+Game.\textbf{cursorMove()}
+
 
 Game.\textbf{create()}->Game
         Description : crée une nouvelle partie
-        Paramètres : 
-        	g : Game
-        	name : chaîne
+        Paramètres :
+         g : Game
+         name : chaîne
         Valeur de retour : nouvelle partie
 
 Game.\textbf{move()}->return
@@ -20,3 +23,10 @@ Game.\textbf{show()}->rien
         Paramètres : g : Game
         Valeur de retour : aucune
 
+Game.\textbf{interact()}->?
+
+
+Game.\textbf{showCursor()}->?
+
+
+Game.\textbf{cursorMove()}->?

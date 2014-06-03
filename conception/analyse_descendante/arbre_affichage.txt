@@ -1,7 +1,8 @@
 
 Main.show()
  +--Game.show()
-     +--Map.show()
-     +--Monster.show()
+     +--Background.show()
+     +--Game.showCursor()
      +--Tower.show()
-     +--Score.show()
+     +--Animat.show()
+     +--Player.show()

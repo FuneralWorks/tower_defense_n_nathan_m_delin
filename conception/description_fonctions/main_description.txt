@@ -1,15 +1,10 @@
-        
-        Main.\textbf{main()}
-        Main.\textbf{init()}
-        Main.\textbf{run()}
-        Main.\textbf{show()}
-        Main.\textbf{interact()}
-        Main.\textbf{move()}
-        Main.\textbf{timesleep()}
-        Main.\textbf{anim()}
-        Main.\textbf{askName()}
-        Main.\textbf{askLevel()}
-        Main.\textbf{finish()}
+Main.\textbf{main()}
+    Main.\textbf{init()}
+    Main.\textbf{run()}
+    Main.\textbf{show()}
+    Main.\textbf{interact()}
+    Main.\textbf{refTime}
+       
 
 Main\textbf{main()}->rien
         Description : fonction principale du jeu
@@ -36,22 +31,4 @@ Main.\textbf{interact()}->rien
         Paramètres : aucun
         Valeur de retour : aucune
         
-Main.\textbf{anim()}->rien
-        Description : animation des tirs des tours
-        Paramètres : aucun
-        Valeur de retour : aucune
-        
-Main.\textbf{askName()}->chaîne
-        Description : demande le nom de l'utilisateur
-        Paramètres : aucun
-        Valeur de retour : le nom du joueur
-        
-Main.\textbf{askLevel()}->entier
-        Description : demande à l'utilisateur le niveau auquel il souhaite jouer
-        Paramètres : aucun
-        Valeur de retour : niveau selectionné
-        
-Main.\textbf{finish()}->rien
-        Description : termine ma partie, affiche la fin du niveau avec le score du joueur et sauvegarde le score du joueur
-        Paramètres : aucun
-        Valeur de retour : aucune
+

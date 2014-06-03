@@ -1,19 +1,6 @@
 
 Main.interact()
- +--Game.move()
- |   +--Map.getselected()
- |   +--Map.setselected()
- |   +--Monster.move()
- |
- +--Game.play()
- |   +--Map.play()
- |   +--Tower.play()
- |
- +--Monster.play()
- |   +--Monster.damage()
- |   +--Monster.spawn()
- |   +--Monster.die()
- |   +--Monster.effect()
- |
- +--Main.finish()
- 
+ +--Game.interact()
+   +--Game.cursorMove()
+   +--Tower.shoot()
+   +--Game.move()

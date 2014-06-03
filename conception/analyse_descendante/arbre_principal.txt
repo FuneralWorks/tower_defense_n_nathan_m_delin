@@ -1,16 +1,16 @@
 
 Main.main()
  +--Main.init()
- |   +--Main.askName()
- |   +--Main.askLevel()
- |   +--Game.create()
- |       +--Level.create()
- |           +--Map.create()
- |           +--Score.create()
+ | +--Background.create()
+ | +--Player.create()
+ | +--Level.create()
+ | +--Game.create() 
  |
  +--Main.run()
-     +--Main.interact()
-     +--Main.move()
-     +--Main.anim()
-     +--Main.show()
-     +--Main.timesleep()
+ | +--Main.interact()
+ |
+ +--Main.interact()
+ | +--Game.interact()
+ |
+ +--Main.show()
+   +--Game.show()

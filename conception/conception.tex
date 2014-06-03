@@ -79,7 +79,7 @@
         \item Le langage utilisé est Python. Le développement devra donc se faire en python.
         \item Les notions de programmation orientée objet n'ayant pas encore été abordées, le programme devra essentiellement s'appuyer sur le paradigme de la programmation procédurale.
         \item Le logiciel devra être réalisé en conformité avec les pratiques préconisées en cours de MDD: barrière d'abstraction, modularité, unicode, etc.
-        \item L'interface sera réalisée en mode texte dans un terminal. 
+        \item L'interface sera réalisée en mode texte dans un terminal.
         \end{itemize}
         \subsection{Fonctionnalités}
         \begin{itemize}
@@ -94,19 +94,14 @@
           \item F3.1.1 Afficher le jeu
             \begin{description}
               \item{-} map
-              \item{-} nom
-              \item{-} niveau
-              \item{-} score
               \item{-} case sélectionnée
               \item{-} nombre de monstres restants
-              \item{-} différentes tours disponibles
+              \item{-} tour posée
               \item{-} argent
             \end{description}
-          \item F3.1.2 Sélectionner une tour
-          \item F3.1.3 Se déplacer dans la map
-          \item F3.1.4 Placer une tour
-          \item F3.1.5 Améliorer une tour
-          \item F3.1.6 Finir manche
+          \item F3.1.2 Placer une tour
+          \item F3.1.3 Tuer monstre
+          \item F3.1.4 Finir manche
           \newline
         \end{itemize}
         
@@ -120,7 +115,7 @@
         \subsection{P1: Prototype P1}
         Ce prototype porte essentiellement sur la création de la map et sur l'affichage.
         
-        Mise en oeuvre des fonctionnalités: F1, F2, F3.1.1, F3.1.2, F3.1.3, F3.1.4, F3.1.5
+        Mise en oeuvre des fonctionnalités: F1, F2, F3.1.1, F3.1.2, F3.1.3
         
         Livré dans un archive au format \emph{.zip} ou \emph{.tgz}
         
@@ -128,7 +123,7 @@
         \subsection{P2: Prototype P2}
         Ce prototype réalise toutes les fonctionnalités.
         
-        Ajout à P1 des fonctionnalités F3.1.6, F3.2
+        Ajout à P1 des fonctionnalités F3.1.4, F3.2
         
         Livré dans un archive au format \emph{.zip} ou \emph{.tgz}
         
@@ -146,7 +141,7 @@
         abstraite.
 
         \subsection{Interface utilisateur}
-        L'interface utilisateur se fera via un terminal de type linux. Nous reprenons la solution donnée en cours de MDD en utilisant les modules :\emph{termios}, \emph{sys}, \emph{select}.
+        L'interface utilisateur se fera via un terminal de type linux. Nous utiliserons le module \emph{ncurses}.
 
             \subsubsection{Boucle de simulation}
             Le programme mettra en oeuvre une boucle de simulation qui gèrera l'affichage et les
@@ -158,12 +153,12 @@
 
             \subsubsection{Gestion du clavier}
             L'entrée standard est utilisé pour détecter les actions de l'utilisateur.
-            Le module \emph{tty} permet de rediriger les événements clavier sur l'entrée standard.
+            Le module \emph{win.keypad} permet de rediriger les événements clavier sur l'entrée standard.
             Pour connaître les actions de l'utilisateur il suffit de lire l'entrée standard.
 
             \subsubsection{Image ascii-art}
             Pour dessiner certaines parties de l'interface nous utilisons des « images ascii ».
-            Dans l'idée de séparer le code et les données, les différentes images ASCII seront stockées dans des fichiers XML : \emph{level1.xml}, \emph{level2.xml} et du module python \emph{Minidom}.
+            Dans l'idée de séparer le code et les données, les différentes images ASCII seront stockées dans des fichiers texte : \emph{image.txt}.
 
         \subsection{Map, cases et tours\ldots}
         Pour modéliser la \emph{map} , une liste de liste (m*n) permet de stocker des caractères correspondant aux tours posées sur la \emph{map} ou à une case vide.
@@ -173,7 +168,7 @@
         \subsection{Analyse noms/verbes}
             \begin{description}
                 \item[Verbes:] \hfill \\
-                    nommer, choisir, afficher, déplacer, placer, améliorer, finir, quitter
+                    nommer, choisir, afficher, déplacer, placer, finir, quitter
                 \item[Noms:] \hfill \\
                     jouer, niveau, nom, map, monstre, curseur, tour, argent, case selectionnée, nombre de monstres restant
            \end{description}
@@ -184,31 +179,27 @@
         \subsection{Dépendance entre modules}
         \begin{tikzpicture}
             
-                \node[our] (main)           {Main.py};
-                \node[our] (game)          [below=of main] {Game.py};
-                \node[our] (level)         [below=of game] {Level.py};
-                \node[our] (map)           [right=of level] {Map.py};
-                \node[our] (score)         [left=of level] {Score.py};
-                \node[our] (monster)       [right=of game] {Monster.py};
-                \node[our] (tower)         [above=of monster,yshift=-.5 cm] {Tower.py};
-                \node[system] (tty)         [left=of main]{tty.py};
-                \node[system] (select)         [below=of tty,yshift=1cm]{select.py};
-                \node[system] (termios)         [below=of select,yshift=1cm]{termios.py};
-                \node[system] (sys)         [above=of tty,yshift=-1cm]{sys.py};
+                \node[our] (main) {Main.py};
+                \node[our] (game) [below=of main] {Game.py};
+                \node[our] (level) [below=of game] {Level.py};
+                \node[our] (player) [right=of level] {Player.py};
+                \node[our] (background) [left=of level] {Background.py};
+                \node[our] (monster) [right=of game] {Animat.py};
+                \node[our] (tower) [above=of monster,yshift=-.5 cm] {Tower.py};
+             
+                \node[system] (ncurses) [left=of main]{ncurses};
+         
 
 
-                \draw [ar] (main) to                (game);
-                \draw[ar]  (game) to                (monster);
-                \draw[ar]  (game) to                [bend right=-15] (tower);
-                \draw[ar]  (game) to                (level);
-                \draw[ar]  (game) to                [bend left=-30] (score);
-                \draw[ar]  (game) to                [bend right=-15]  (map);
-                \draw[ar]  (level) to               (map);
-                \draw[ar]  (level) to               (score);
-                \draw[ar]  (main) to                [bend left=-5] (tty);
-                \draw[ar]  (main) to                [bend left=15](select);
-                \draw[ar]   (main) to               [bend left=25](termios);
-                \draw[ar]   (main) to               [bend left=-25] (sys);
+                \draw[ar] (main) to (game);
+                \draw[ar] (game) to (monster);
+                \draw[ar] (game) to [bend right=-15] (tower);
+                \draw[ar] (game) to (level);
+                \draw[ar] (game) to [bend right=-15] (player);
+                \draw[ar] (level) to (player);
+                \draw[ar] (level) to (background);
+                \draw[ar] (main) to [bend left=-5] (ncurses);
+                
 
 
 
@@ -222,48 +213,52 @@
 
         \subsection{Analayse descendante}
             \subsubsection{Arbre principal}
+            \noindent
             \begin{alltt}
             \input{/home/funeralworks/Documents/ENIB/S2/info/tower_defense_n_nathan_m_delin/conception/analyse_descendante/arbre_principal.txt}
             \end{alltt}
             \subsubsection{Arbre affichage}
+            \noindent
             \begin{alltt}
             \input{/home/funeralworks/Documents/ENIB/S2/info/tower_defense_n_nathan_m_delin/conception/analyse_descendante/arbre_affichage.txt}
             \end{alltt}
             \subsubsection{Arbre interaction}
+            \noindent
             \begin{alltt}
             \input{/home/funeralworks/Documents/ENIB/S2/info/tower_defense_n_nathan_m_delin/conception/analyse_descendante/arbre_interaction.txt}
             \end{alltt}
     \section{Description des fonctions}
         \subsection{Programme principal: Main.py}
+        \noindent
             \begin{alltt}
             \input{/home/funeralworks/Documents/ENIB/S2/info/tower_defense_n_nathan_m_delin/conception/description_fonctions/main_description.txt}
                
             \end{alltt}
 
         \subsection{Game.py}
+        \noindent
             \begin{alltt}
                 \input{/home/funeralworks/Documents/ENIB/S2/info/tower_defense_n_nathan_m_delin/conception/description_fonctions/game_description.txt}
             \end{alltt}
 
-        \subsection{Map.py}
+        \subsection{Background.py}
+        \noindent
             \begin{alltt}
-                 \input{/home/funeralworks/Documents/ENIB/S2/info/tower_defense_n_nathan_m_delin/conception/description_fonctions/map_description.txt}
+                 \input{/home/funeralworks/Documents/ENIB/S2/info/tower_defense_n_nathan_m_delin/conception/description_fonctions/background_description.txt}
             \end{alltt}
 
         \subsection{Level.py}
+        \noindent
             \begin{alltt}
                 \input{/home/funeralworks/Documents/ENIB/S2/info/tower_defense_n_nathan_m_delin/conception/description_fonctions/level_description.txt}
             \end{alltt}
 
-        \subsection{Monster.py}
+        \subsection{Animat.py}
+        \noindent
             \begin{alltt}
-                \input{/home/funeralworks/Documents/ENIB/S2/info/tower_defense_n_nathan_m_delin/conception/description_fonctions/monster_description.txt}
+                \input{/home/funeralworks/Documents/ENIB/S2/info/tower_defense_n_nathan_m_delin/conception/description_fonctions/animat_description.txt}
             \end{alltt}
 
-        \subsection{Score.py}
-            \begin{alltt}
-                \input{/home/funeralworks/Documents/ENIB/S2/info/tower_defense_n_nathan_m_delin/conception/description_fonctions/score_description.txt}
-            \end{alltt}
 
         \subsection{Tower.py}
             \begin{alltt}
@@ -281,7 +276,7 @@
                 \hline
                 Main.\textbf{init()} & & & \\
                 \hline
-                Main.\textbf{run()}  & & & \\
+                Main.\textbf{run()} & & & \\
                 \hline
                 Main.\textbf{show()} & & & \\
                 \hline
@@ -292,7 +287,7 @@
                 Main.\textbf{timesleep()} & & & \\
                 \hline
                 Main.\textbf{anim()} & & & \\
-                \hline 
+                \hline
                 Main.\textbf{askName()} & & & \\
                 \hline
                 Main.\textbf{askLevel()} & & & \\
@@ -303,7 +298,7 @@
                 Game.\textbf{move()} & & & \\
                 \hline
                 Game.\textbf{show()} & & & \\
-                \hline 
+                \hline
                 \hline
                 Map.\textbf{create()} & & & \\
                 \hline
@@ -324,7 +319,7 @@
                 Monster.\textbf{play()} & & & \\
                 \hline
                 Monster.\textbf{damage()} & & & \\
-                \hline 
+                \hline
                 Monster.\textbf{spawn()} & & & \\
                 \hline
                 Monster.\textbf{die()} & & & \\
@@ -338,10 +333,10 @@
                 Tower.\textbf{show()} & & & \\
                 \hline
       
-            \end{tabular}  
+            \end{tabular}
       
             \subsubsection{Autre}
-            Possibilité d'enregistrer son score dans un fichier \emph{.xml}, 
+            Possibilité d'enregistrer son score dans un fichier \emph{.xml},
         \subsection{P2 : 28 Mai}
             \subsubsection{Fonctions à développer}
             \begin{tabular}{|l|c|c|c|}
@@ -355,7 +350,7 @@
                 \hline
                 \hline
                 Tower.\textbf{play()} & & & \\
-                \hline 
+                \hline
             \end{tabular}
 
 \end{document}

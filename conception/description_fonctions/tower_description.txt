@@ -1,8 +1,10 @@
 
-Tower.\textbf{play()}
+Tower.\textbf{set()}
 Tower.\textbf{show()}
+Tower.\textbf{showLife()}
+Tower.\textbf{showMoney()}
 
-Tower.\textbf{play()}->?
+Tower.\textbf{set()}->?
        Description : ?
        Paramètres : ?
        Valeur de retour : ?
@@ -11,3 +13,7 @@ Tower.\textbf{show()}->rien
        Description : affiche les tours
        Paramètres : aucun
        Valeur de retour : aucune
+
+Tower.\textbf{showLife()}->?
+
+Tower.\textbf{showMoney()}->?
