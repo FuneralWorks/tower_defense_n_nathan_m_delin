@@ -1,0 +1,19 @@
+Main.main()
+ +--Main.init()
+ | +--Background.create()
+ | +--Player.create()
+ | +--Level.create()
+ | +--Main.refTime()
+ | +--Game.create() 
+ |
+ +--Main.run()
+ | +--Main.interact()
+ |
+ +--Main.interact()
+ | +--Game.interact()
+ |
+ +--Main.show()
+   +--Game.show()
+
+
+

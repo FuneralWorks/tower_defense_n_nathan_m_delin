@@ -1,0 +1,36 @@
+
+
+Main.\textbf{main()}
+Main.\textbf{init()}
+Main.\textbf{run()}
+Main.\textbf{show()}
+Main.\textbf{interact()}
+Main.\textbf{refTime}
+   
+
+Main\textbf{main()}->rien
+        Description : fonction principale du jeu
+        Paramètres : aucun
+        Valeur de retour : aucune
+
+Main\textbf{init()}->return
+        Description : initialisation du jeu
+        Paramètres : aucun
+        Valeur de retour : aucune
+        
+Main.\textbf{run()}->rien
+        Description : boucle de simulation
+        Paramètres : aucun
+        Valeur de retour : aucune
+        
+Main.\textbf{show()}->rien
+        Description : affiche le jeu dans le terminal
+        Paramètres : aucun
+        Valeur de retour : aucune
+        
+Main.\textbf{interact()}->rien
+        Description : gère les événements clavier
+        Paramètres : aucun
+        Valeur de retour : aucune
+        
+

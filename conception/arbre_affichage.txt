@@ -1,0 +1,13 @@
+Main.show()
+ +--Game.show()
+     +--Background.show()
+     +--Game.showCursor()
+     +--Tower.show()
+     +--Animat.show()
+     +--Player.show()
+
+
+
+
+
+

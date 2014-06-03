@@ -1,0 +1,13 @@
+
+Animat.\textbf{create()}
+Animat.\textbf{show}
+Animat.\textbf{colorMonster}
+
+Animat.\textbf{create()}-> ?
+         
+Animat.\textbf{show()}->?
+         Description : ?
+         Paramètres : ?
+         Valeur de retour : ?
+         
+Animat.\textbf{colorMonster()}->?

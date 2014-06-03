@@ -1,0 +1,31 @@
+
+
+Background.\textbf{create()}
+Background.\textbf{getSpawn()}
+Background.\textbf{setSpan()}
+Background.\textbf{getFinish()}
+Background.\textbf{setFinish()}
+Background.\textbf{show()}
+
+Background.\textbf{create()}->liste de liste
+        Description : crée la \emph{map} à partir d'un fichier .txt
+        stocker dans le module \textbf{Level} et à l'aide de la fonction split()
+        Paramètres : \emph{fichier.txt}
+        Valeur de retour : liste de liste
+
+Background.\textbf{getSpawn()}->rien
+        Description : définit la case sélectionnée
+        Paramètres : Map
+                     index : tuple(entier,entier)
+        Valeur de retour : rien
+
+Background.\textbf{setSpawn}->?
+
+Background.\textbf{getFinish}->?
+
+Background.\textbf{setFinish}->?
+        
+Background.\textbf{show(m)}->rien
+        Description : affiche la \emph{map}
+        Paramètres : m: map
+        Valeur de retour : rien
